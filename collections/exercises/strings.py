@@ -33,4 +33,4 @@ print(reversed_word)
 
 
 # 3. Refactor the code to print a combination of the original and reversed string. For example, given 'tomato', print 'tomatootamot'. (If you want to be fancy, print 'tomato | otamot').
-print(word + reversed_word)
+print(word + reversed_word) 
