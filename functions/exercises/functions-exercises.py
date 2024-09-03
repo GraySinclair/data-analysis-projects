@@ -29,34 +29,32 @@ def make_stairs(step_num = 9):
 
 
 # Part 2 B -- Make Space-Line 
-def make_space_line(numspaces = 3, numchara = 3):
-    spaceline = ''
-    for i in range(numspaces):
-        spaceline += '_'
-    for i in range(numchara):
-        spaceline += '#'
-    for i in range(numspaces):
-        spaceline += '_'
-    print(spaceline)
 
+def make_space_line(numSpaces, numChars):
+    line = ' ' * numSpaces + '#' * numChars + ' ' * numSpaces
+    return line
 
 
 # Part 2 C -- Make Isosceles Triangle
-def make_triangle(height = 6):
-   triangle = ""
+def make_isosceles_triangle(height):
+   triangle = ''
    for i in range(height):
-        while i > height:
-            if triangle % 2 == 0:
-                triangle += '#'
-            else:
-                triangle += '##'
-            print(triangle)
+      triangle += (make_space_line(height - i - 1, 2 * i + 1) + '\n')
+   return triangle
 
-make_triangle()
+
+
 
 # Part 3 -- Make a Diamond
+def make_diamond(height):
+   diamond = ''
+   triangle = make_isosceles_triangle(height)
+   diamond += triangle[:-1]
+   for i in range(len(triangle)-1, -1, -1):
+      diamond += triangle[i]
+   return diamond
 
-
+print(make_diamond(5))
 
 
 
