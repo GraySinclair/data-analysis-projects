@@ -33,18 +33,14 @@ def reverse_characters(string_to_reverse):
         rejoined_list = int(''.join(list_string_to_reverse))
     return rejoined_list
 
-
 def reverse_list(list_we_want_to_change):
     new_empty_list = []
     for x in list_we_want_to_change:
         new_empty_list.append(reverse_characters(x))
     return new_empty_list
     
-
 list_test1 = ['apple', 'potato', 'Capitalized Words']
 list_test2 = [123, 8897, 42, 1168, 8675309]
 list_test3 = ['hello', 'world', 123, 'orange']
 
-print(reverse_list(list_test1))
-print(reverse_list(list_test2))
 print(reverse_list(list_test3))
