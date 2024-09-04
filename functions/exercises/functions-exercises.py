@@ -43,8 +43,6 @@ def make_isosceles_triangle(height):
    return triangle
 
 
-
-
 # Part 3 -- Make a Diamond
 def make_diamond(height):
    diamond = ''
@@ -55,7 +53,3 @@ def make_diamond(height):
    return diamond
 
 print(make_diamond(5))
-
-
-
-
