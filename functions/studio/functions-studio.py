@@ -20,7 +20,6 @@
 # e) Return the final, reversed list.
 # f) Be sure to print the results from each test case in order to verify your code.
 
-
 def reverse_characters(string_to_reverse):
     reversed_string = []
     if type(string_to_reverse) == str:

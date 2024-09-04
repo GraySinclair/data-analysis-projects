@@ -36,20 +36,29 @@ def make_space_line(numSpaces, numChars):
 
 
 # Part 2 C -- Make Isosceles Triangle
-def make_isosceles_triangle(height):
-   triangle = ''
-   for i in range(height):
-      triangle += (make_space_line(height - i - 1, 2 * i + 1) + '\n')
-   return triangle
+def make_triangle(height):
+    triangle = ''
+    for i in range(height):
+        triangle += make_space_line(height - i, i + i + 1)
+        if i < height - 1:
+            triangle += '\n'
+    return triangle
+
+
+def inverse_triangle(height):
+    triangleinv = ''
+    counter = height
+    for i in range(height):
+        triangleinv += make_space_line(height - counter +1, counter + counter -1)
+        counter += - 1
+        if i < height - 1:
+            triangleinv += '\n'
+    return triangleinv
 
 
 # Part 3 -- Make a Diamond
 def make_diamond(height):
-   diamond = ''
-   triangle = make_isosceles_triangle(height)
-   diamond += triangle[:-1]
-   for i in range(len(triangle)-1, -1, -1):
-      diamond += triangle[i]
-   return diamond
+    print(make_triangle(height))
+    print(inverse_triangle(height))
 
-print(make_diamond(5))
+make_diamond(9)
